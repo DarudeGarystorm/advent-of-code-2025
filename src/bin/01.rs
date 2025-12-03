@@ -29,8 +29,20 @@ fn count_zero_crossings(start_pos: i64, direction: char, distance: i64) -> u64 {
     let start = start_pos % DIAL_SIZE; // normalize
 
     let clicks_to_next_zero = match direction {
-        'R' => if start == 0 { DIAL_SIZE } else { DIAL_SIZE - start },
-        'L' => if start == 0 { DIAL_SIZE } else { start },
+        'R' => {
+            if start == 0 {
+                DIAL_SIZE
+            } else {
+                DIAL_SIZE - start
+            }
+        }
+        'L' => {
+            if start == 0 {
+                DIAL_SIZE
+            } else {
+                start
+            }
+        }
         _ => return 0,
     };
 
