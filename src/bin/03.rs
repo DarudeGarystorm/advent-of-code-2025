@@ -13,7 +13,12 @@ fn find_max_joltage(line: &str, num_batteries: usize) -> u64 {
         let mut best_val = chars[start_idx];
 
         // Look for the best digit we can pick at this position
-        for (i, &ch) in chars.iter().enumerate().take(n - remaining_needed).skip(start_idx) {
+        for (i, &ch) in chars
+            .iter()
+            .enumerate()
+            .take(n - remaining_needed)
+            .skip(start_idx)
+        {
             if ch > best_val {
                 best_idx = i;
                 best_val = ch;
