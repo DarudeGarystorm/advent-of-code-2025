@@ -1,3 +1,11 @@
+pub fn parse_grid(input: &str) -> Vec<Vec<char>> {
+    input
+        .trim()
+        .lines()
+        .map(|line| line.chars().collect())
+        .collect()
+}
+
 pub fn count_adjacent(grid: &[Vec<char>], row: usize, col: usize, target: char) -> u64 {
     let mut count = 0;
     let rows = grid.len() as i32;

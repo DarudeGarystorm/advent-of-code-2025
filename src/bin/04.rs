@@ -1,13 +1,9 @@
-use advent_of_code::grid::count_adjacent;
+use advent_of_code::grid::{count_adjacent, parse_grid};
 
 advent_of_code::solution!(4);
 
 pub fn part_one(input: &str) -> Option<u64> {
-    let grid: Vec<Vec<char>> = input
-        .trim()
-        .lines()
-        .map(|line| line.chars().collect())
-        .collect();
+    let grid = parse_grid(input);
 
     let mut count = 0;
 
@@ -27,11 +23,7 @@ pub fn part_one(input: &str) -> Option<u64> {
 }
 
 pub fn part_two(input: &str) -> Option<u64> {
-    let mut grid: Vec<Vec<char>> = input
-        .trim()
-        .lines()
-        .map(|line| line.chars().collect())
-        .collect();
+    let mut grid: Vec<Vec<char>> = parse_grid(input);
 
     let mut count = 0;
 
