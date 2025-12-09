@@ -19,7 +19,9 @@ fn create_graph(input: &str) -> Graph<(f64, f64, f64), (), Undirected> {
     graph
 }
 
-fn calculate_distances(graph: &Graph<(f64, f64, f64), (), Undirected>) -> Vec<(f64, petgraph::graph::NodeIndex, petgraph::graph::NodeIndex)> {
+fn calculate_distances(
+    graph: &Graph<(f64, f64, f64), (), Undirected>,
+) -> Vec<(f64, petgraph::graph::NodeIndex, petgraph::graph::NodeIndex)> {
     let mut distances = Vec::new();
 
     for i in graph.node_indices() {
