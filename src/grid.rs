@@ -6,6 +6,12 @@ pub fn parse_grid(input: &str) -> Vec<Vec<char>> {
         .collect()
 }
 
+pub fn print_grid(grid: &Vec<Vec<char>>) {
+    for row in grid {
+        println!("{}", row.iter().collect::<String>());
+    }
+}
+
 pub fn count_adjacent(grid: &[Vec<char>], row: usize, col: usize, target: char) -> u64 {
     let mut count = 0;
     let rows = grid.len() as i32;
